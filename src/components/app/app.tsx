@@ -104,43 +104,35 @@ const App = () => {
       </Routes>
 
       {background && (
-        <>
-          <Routes>
-            <Route
-              path='/feed/:number'
-              element={
-                <Modal
-                  title={'Детали заказа'}
-                  onClose={() => navigate('/feed')}
-                >
-                  <OrderInfo />
-                </Modal>
-              }
-            />
-            <Route
-              path='/ingredients/:id'
-              element={
-                <Modal
-                  title={'Детали ингредиента'}
-                  onClose={() => navigate('/')}
-                >
-                  <IngredientDetails />
-                </Modal>
-              }
-            />
-            <Route
-              path='/profile/orders/:number'
-              element={
-                <Modal
-                  title={'Детали заказа'}
-                  onClose={() => navigate('/profile/orders')}
-                >
-                  <OrderInfo />
-                </Modal>
-              }
-            />
-          </Routes>
-        </>
+        <Routes>
+          <Route
+            path='/feed/:number'
+            element={
+              <Modal title={'Детали заказа'} onClose={() => navigate('/feed')}>
+                <OrderInfo />
+              </Modal>
+            }
+          />
+          <Route
+            path='/ingredients/:id'
+            element={
+              <Modal title={'Детали ингредиента'} onClose={() => navigate('/')}>
+                <IngredientDetails />
+              </Modal>
+            }
+          />
+          <Route
+            path='/profile/orders/:number'
+            element={
+              <Modal
+                title={'Детали заказа'}
+                onClose={() => navigate('/profile/orders')}
+              >
+                <OrderInfo />
+              </Modal>
+            }
+          />
+        </Routes>
       )}
     </div>
   );
